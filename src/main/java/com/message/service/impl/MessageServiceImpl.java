@@ -92,7 +92,7 @@ public class MessageServiceImpl implements MessageService {
         simpleMailMessage.setSubject(message.getSubject());
         simpleMailMessage.setText(message.getContent());
         simpleMailMessage.setFrom(mailProperties.getUsername());
-//        javaMailSender.send(simpleMailMessage);
+        javaMailSender.send(simpleMailMessage);
         log.info("邮件信息 {}",message);
     }
 }
