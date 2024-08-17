@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.ZonedDateTime;
 import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
@@ -62,6 +63,11 @@ public class MessageServiceImpl implements MessageService {
         message.setUuid(UUID.randomUUID().toString());
         messageMap.put(message.getUuid(), message);
         this.addMessage(message);
+    }
+
+    @Override
+    public void delete(List<String> uuid) {
+        uuid.forEach((s) -> messageMap.remove(s));
     }
 
     private void send(MessageEntity message) {

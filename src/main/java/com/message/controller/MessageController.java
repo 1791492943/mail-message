@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 
 
 @RestController
@@ -40,6 +41,15 @@ public class MessageController {
     @PutMapping
     public R<Void> update(@RequestBody MessageEntity message) {
         messageService.update(message);
+        return R.ok();
+    }
+
+    /**
+     * 删除消息
+     */
+    @DeleteMapping
+    public R<Void> delete(@RequestBody List<String> uuid) {
+        messageService.delete(uuid);
         return R.ok();
     }
 

@@ -3,6 +3,7 @@ package com.message.service;
 import com.message.domain.entity.MessageEntity;
 
 import java.util.Collection;
+import java.util.List;
 
 public interface MessageService {
 
@@ -13,4 +14,6 @@ public interface MessageService {
     Collection<MessageEntity> list();
 
     void update(MessageEntity message);
+
+    void delete(List<String> uuid);
 }
