@@ -7,6 +7,6 @@ import java.util.Map;
 
 public class MailUtils {
 
-    public static Map<String,MessageEntity> messageEntityMap = new HashMap<>();
+    public static Map<String,MessageEntity> messageMap = new HashMap<>();
 
 }
